@@ -1,0 +1,29 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  border:0px;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+p, .alert, h {
+  padding-top:20px;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}

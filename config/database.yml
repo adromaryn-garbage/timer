@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: timer_development
+  username: adromaryn
+  password: 111111
+  host: localhost
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: timer_test
+  username: adromaryn
+  password: 111111
+  host: localhost
+  port: 5432

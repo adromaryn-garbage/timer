@@ -1,0 +1,9 @@
+<%= form_for @user, url: time_zone_edit_path, method: :patch do |f| %>
+  <div class="field">
+    <%= f.label :timezone %><br>
+    <%= f.time_zone_select :timezone, nil, default: @user.timezone||Time.zone.name %>
+  </div>  
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>
