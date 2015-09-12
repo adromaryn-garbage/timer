@@ -30,6 +30,8 @@ gem 'tlsmail'
 
 gem 'sidekiq'
 
+gem 'phony_rails', '0.12.10'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

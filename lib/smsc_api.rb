@@ -9,8 +9,8 @@ require "erb"
 
 class SMSC
 	# Константы для настройки библиотеки
-	SMSC_LOGIN = ENV["gmail_login"]			# логин клиента
-	SMSC_PASSWORD = ENV["gmail_password"]	# пароль или MD5-хеш пароля в нижнем регистре
+	SMSC_LOGIN = ENV["smsc_username"]			# логин клиента
+	SMSC_PASSWORD = ENV["smsc_password"]	# пароль или MD5-хеш пароля в нижнем регистре
 	SMSC_POST = false				# использовать метод POST
 	SMSC_HTTPS = false				# использовать HTTPS протокол
 	SMSC_CHARSET = "utf-8"			# кодировка сообщения: koi8-r или windows-1251 (по умолчанию utf-8)

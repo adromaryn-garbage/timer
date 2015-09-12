@@ -4,6 +4,6 @@
     <%= f.time_zone_select :timezone, nil, default: @user.timezone||Time.zone.name %>
   </div>  
   <div class="actions">
-    <%= f.submit "Save" %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>

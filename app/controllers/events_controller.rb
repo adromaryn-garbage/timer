@@ -51,7 +51,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    if params.permit(:id) != current_user.id
+    if (set_event).user_id!=current_user.id
       redirect_to root_path
     else
       ep=event_params
@@ -72,7 +72,6 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    puts "hello #{params}"
     if (set_event).user_id!= current_user.id
       redirect_to root_path
       puts"WoW!"
@@ -93,6 +92,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:message, :time, :timezone)
+      params.require(:event).permit(:message, :time, :timezone, :phone_number)
     end
 end

@@ -1,12 +1,20 @@
+require 'smsc_api'
+
 class LookEventsJob < ActiveJob::Base
   queue_as :default
-
-  def perform(*args)
+  
+  
+  def perform
+    sms = SMSC.new()
     loop do
       Event.all.each do |event|
-        if event.time <= Time.now do
-          event.delete
-        end
+      	Time.use_zone(event.timezone) do
+      	  if event.time <= Time.now
+      	    if ret = sms.send_sms(event.phone_number, "At #{event.time}: #{event.message}", translit = 0)
+      	      event.delete
+      	    end
+          end
+        end     
       end
     end
   end

@@ -34,15 +34,14 @@
               <li><%= link_to "Log in", new_user_session_path %></li>
             <% end %>
           </ul>
-        </ul>
-      </nav>
-    </div>
-  </header>
-    <div class="container jumbotron">
+        </nav>
+      </div>
+    </header>
+    <section class="container content">
       <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value %></div>
+        <div class="alert alert-<%= key %>"><%= value %></div>
       <%end%>
       <%= yield %>
-    </div>
+    </section>
   </body>
 </html>

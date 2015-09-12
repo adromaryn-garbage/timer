@@ -11,19 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :message %><br>
-    <%= f.text_field :message %>
+    <%= f.text_field :message, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :time %><br>
     <%= f.datetime_select :time, options={ start_year: 2010, ampm: false, default: 0.days.from_now.in_time_zone(Time.zone)} %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :timezone %><br>
-    <%= f.time_zone_select :timezone, nil, default: Time.zone.name %>
-  </div>  
+    <%= f.time_zone_select :timezone, nil, default: Time.zone.name, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number, class: "form-control"%>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', class: "btn btn-primary"  %>
   </div>
 <% end %>
