@@ -5,6 +5,7 @@
 
 <div>
 
+  <%= will_paginate @events %>
   <table class="table">
     <thead>
       <tr>
@@ -17,10 +18,10 @@
     </thead>
 
     <tbody>
-      <% @user.events.each do |event| %>
+      <% @events.each do |event| %>
         <tr>
-          <td><big><%= event.message %></big></td>
-          <td><big><%= event.time.strftime("%H:%M:%S") %></big></td>
+          <td class="message"><big><%= event.message %></big></td>
+          <td><big><%= event.time.strftime("%H:%M") %></big></td>
           <td><big><%= event.time.strftime("%Y-%m-%d") %></big></td>
           <td><big><%= event.phone_number %></big></td>
           <td>
@@ -32,5 +33,6 @@
       <% end %>
     </tbody>
   </table>
+  <%= will_paginate @events %>
 
 </div>
